@@ -8,13 +8,20 @@ pipeline {
             }
         }
 	stage('Build') {
+	when {
+                branch 'develop'
+	}
             steps {		
-			
                 sh 'mvn clean package'
             }
         }
 
 	stage('Push artifacts into artifactory') {
+	when {
+                not {
+                    branch 'main'
+                }
+            }
             steps {
               rtUpload (
                 serverId: 'my-artifactory',
