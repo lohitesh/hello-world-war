@@ -7,3 +7,5 @@ This is the simplest possible Java webapp for testing servlet container deployme
 change the version from 2.1.1 to 3.4.0 for maven-war-plugin dependency in pom.xml file
 Commadn to build:
 mvn clean package
+
+to add jfrog token in jenkins manage jenkins --> credentials ---> select secret text ---
